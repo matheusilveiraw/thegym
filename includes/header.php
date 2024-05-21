@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body">
 
     <!-- navbar -->
     <nav>
@@ -28,3 +28,5 @@
         <li><a href="collapsible.html">Javascript</a></li>
         <li><a href="mobile.html">Mobile</a></li>
     </ul>
+
+    <div id="conteudo"> </div>
