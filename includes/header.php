@@ -1,32 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gym</title>
+
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- para icones -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
-<body">
-
-    <!-- navbar -->
-    <nav>
-        <div class="nav-wrapper red">
-            <a href="#!" class="brand-logo ml-1">The Gymmm</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">Javascript</a></li>
-                <li><a href="mobile.html">Mobile</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- side bar mobile  -->
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-    </ul>
-
-    <div id="conteudo"> </div>
+<body class="d-flex flex-column min-vh-100">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.php">The Gym</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="clientes.php">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="produtos.php">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="compras.php">Compras</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
