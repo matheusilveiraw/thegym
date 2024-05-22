@@ -62,7 +62,8 @@
                             <tr>
                                 <th scope="row"><?php echo $dados['id']; ?></th>
                                 <td><?php echo $dados['nome']; ?></td>
-                                <td><?php echo $dados['sobrenome']; ?></td>
+                                <td><a href="<?php echo $dados['img']; ?>">Link Imagem</a></td>
+                                <td><?php echo $dados['data']; ?></td>
                                 <td>
                                     <a class="btn btn-warning btn-sm" href="editar_musculo.php?id=<?php echo $dados['id'] ?>.php" role="button"><i data-feather="edit"></i></a>
                                 </td>
