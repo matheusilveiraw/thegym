@@ -1,11 +1,8 @@
 <?php 
-    //aqui vão apenas as regras de negócio do produtos
-
     namespace App\Model;
 
-
-    class Produto { 
-        private $id, $nome, $descricao;
+    class Musculo { 
+        private $id, $nome;
 
         public function getId() { 
             return $this->id;
@@ -24,12 +21,12 @@
             $this->nome = $nome;
         }
 
-        public function getDescricao() { 
-            return $this->descricao;
-        }
+        // public function getDescricao() { 
+        //     return $this->descricao;
+        // }
 
-        public function setDescricao($descricao) { 
-            $this->descricao = $descricao;
-        }
+        // public function setDescricao($descricao) { 
+        //     $this->descricao = $descricao;
+        // }
     }
 ?>

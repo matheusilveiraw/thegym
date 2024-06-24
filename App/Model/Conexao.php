@@ -1,8 +1,7 @@
 <?php
-
     namespace App\Model;
 
-    class Conexao { //padrão singleton, ter só uma única instancia de uma classe para ser mais rápido 
+    class Conexao {
 
         private static $instance;
 
