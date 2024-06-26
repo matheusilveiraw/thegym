@@ -1,24 +1,21 @@
 <?php 
     namespace App\Model;
 
-    class ProdutoDao { 
+    class MusculoDao { 
 
             public function create(Musculo $m) { 
+                $sql = 'INSERT INTO musculo (nome, link, data) VALUES (?, ?, ?)';
 
-                // var_dump($p);
-                // echo $p->getNome();
-                // echo $p->getDescricao();
+                $stmt = Conexao::getConn()->prepare($sql);
+                $stmt->bindValue(1, $m->getNome());
+                $stmt->bindValue(2, $m->getLink());
+                $stmt->bindValue(3, $m->getData());
 
-                // $sql = 'INSERT INTO produto (nome, descricao) VALUES (?, ?)'; //ponto de interroção são os bind values
-
-                // echo $sql;
-
-                // $stmt = Conexao::getConn()->prepare($sql);
-                // $stmt->bindValue(1, $p->getNome());
-                // $stmt->bindValue(2, $p->getDescricao());
-
-                // $stmt->execute(); 
-                //execute, bindvalue e prepare são do pdo
+                if ($stmt->execute()) {
+                    header('Location: ../../musculos/musculos_lista.php?cadastroSucesso');
+                } else {
+                    print_r($stmt->errorInfo());
+                }
             }
 
             public function read() { 

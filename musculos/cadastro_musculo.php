@@ -36,7 +36,7 @@
     <div class="row justify-content-center">
         <div class="col-10">
             <h1 class="text-center mt-5">Cadastro de Músculso</h1>
-            <form class="form-horizontal col-12" action="banco_de_dados/create_musculo.php" method="POST">
+            <form class="form-horizontal col-12" action="../banco_de_dados/musculos/create_musculos.php" method="POST">
                 <div class="mt-1">
                     <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do músculo" value="<?php if (isset($_GET['nome'])) echo $_GET['nome'] ?>" required>
                     <?php if (isset($_GET['errosNome'])) { ?>
@@ -46,10 +46,10 @@
                     <?php } ?>
                 </div>
                 <div class="mt-1">
-                    <input type="text" name="sobrenome" class="form-control" id="sobrenome" placeholder="Sobrenome" value="<?php if (isset($_GET['sobrenome'])) echo $_GET['sobrenome'] ?>" required>
-                    <?php if (isset($_GET['errosSobrenome'])) { ?>
+                    <input type="url" name="link" class="form-control" id="link" placeholder="Link do músculo" value="<?php if (isset($_GET['link'])) echo $_GET['link'] ?>" required>
+                    <?php if (isset($_GET['errosLink'])) { ?>
                         <span class="small-warning">
-                            <?php if (isset($_GET['errosSobrenome'])) echo '*' . $_GET['errosSobrenome'] ?>
+                            <?php if (isset($_GET['errosLink'])) echo '*' . $_GET['errosLink'] ?>
                         </span>
                     <?php } ?>
                 </div>
@@ -58,7 +58,7 @@
                 </div>
             </form>
             <div class="container text-center mt-1">
-                <a class="btn btn-secondary btn-lg col-sm-3" href="musculos.php" role="button">Voltar</a>
+                <a class="btn btn-secondary btn-lg col-sm-3" href="musculos_lista.php" role="button">Voltar</a>
             </div>
         </div>
     </div>

@@ -43,8 +43,8 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Imagem</th>
-                        <th scope="col">Data</th>
+                        <th scope="col">Link</th>
+                        <th scope="col">Data de Cadastro</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Deletar</th>
                     </tr>
@@ -62,7 +62,7 @@
                             <tr>
                                 <th scope="row"><?php echo $dados['id']; ?></th>
                                 <td><?php echo $dados['nome']; ?></td>
-                                <td><a href="<?php echo $dados['img']; ?>">Link Imagem</a></td>
+                                <td><a href="<?php echo $dados['link']; ?>">Link</a></td>
                                 <td><?php echo $dados['data']; ?></td>
                                 <td>
                                     <a class="btn btn-warning btn-sm" href="editar_musculo.php?id=<?php echo $dados['id'] ?>.php" role="button"><i data-feather="edit"></i></a>
