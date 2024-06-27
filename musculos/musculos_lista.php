@@ -65,7 +65,7 @@
                                 <td><a href="<?php echo $dados['link']; ?>">Link</a></td>
                                 <td><?php echo $dados['data']; ?></td>
                                 <td>
-                                    <a class="btn btn-warning btn-sm" href="editar_musculo.php?id=<?php echo $dados['id'] ?>.php" role="button"><i data-feather="edit"></i></a>
+                                    <a class="btn btn-warning btn-sm" href="cadastro_musculo.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="edit"></i></a>
                                 </td>
                                 <td>
                                     <a class="btn btn-danger btn-sm" href="../banco_de_dados/musculos/delete_musculos.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="trash-2"></i></a>

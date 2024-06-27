@@ -34,14 +34,20 @@
             }
 
             public function update(Musculo $m) { 
-                // $sql = 'UPDATE produto SET nome = ?, descricao = ? WHERE id = ?';
+                $sql = 'UPDATE musculo SET nome = ?, link = ? WHERE id = ?';
 
-                // $stmt = Conexao::getConn()->prepare($sql);
-                // $stmt->bindValue(1, $p->getNome());
-                // $stmt->bindValue(2, $p->getDescricao());
-                // $stmt->bindValue(3, $p->getId());
+                $stmt = Conexao::getConn()->prepare($sql);
+                $stmt->bindValue(1, $m->getNome());
+                $stmt->bindValue(2, $m->getLink());
+                $stmt->bindValue(3, $m->getId());
 
-                // $stmt->execute();
+                $stmt->execute();
+
+                if ($stmt->execute()) {
+                    header('Location: ../../musculos/musculos_lista.php?atualizaoSucesso');
+                } else {
+                    print_r($stmt->errorInfo());
+                }
 
             }
 
