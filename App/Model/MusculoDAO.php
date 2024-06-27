@@ -46,11 +46,17 @@
             }
 
             public function delete($id) { 
-            //     $sql = 'DELETE FROM produto WHERE id = ?';
+                $sql = 'DELETE FROM musculo WHERE id = ?';
 
-            //     $stmt = Conexao::getConn()->prepare($sql);
-            //     $stmt->bindValue(1, $id);
-            //     $stmt-> execute();
+                $stmt = Conexao::getConn()->prepare($sql);
+                $stmt->bindValue(1, $id);
+                $stmt-> execute();
+
+                if ($stmt->execute()) {
+                    header('Location: ../../musculos/musculos_lista.php?deleteSucesso');
+                } else {
+                    print_r($stmt->errorInfo());
+                }
             }
     }
 ?>
