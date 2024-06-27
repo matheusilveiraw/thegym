@@ -18,21 +18,6 @@
                 }
             }
 
-            public function read() { 
-
-                // $sql = 'SELECT * FROM produto';
-
-                // $stmt = Conexao::getConn()->prepare($sql);
-                // $stmt->execute();
-
-                // if($stmt->rowCount() > 0) { 
-                //     $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-                //     return $resultado;
-                // } else { 
-                //     return [];
-                // }
-            }
-
             public function update(Musculo $m) { 
                 $sql = 'UPDATE musculo SET nome = ?, link = ? WHERE id = ?';
 
