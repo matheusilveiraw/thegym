@@ -37,7 +37,7 @@
     <div class="row">
         <div class="col"> </div>
         <div class="col-10">
-            <h1>Músculos</h1>
+            <h1>Exercícios</h1>
             <table class="table">
                 <thead>
                     <tr>
@@ -50,7 +50,10 @@
                 </thead>
 
                 <?php
-                $sql = "SELECT * FROM exercicio";
+                $sql = "SELECT e.id, e.nome AS exercicio_nome, m.nome AS musculo_nome 
+                        FROM exercicio e 
+                        JOIN musculo m ON e.musculo = m.id";
+
                 $resultado = mysqli_query($connect, $sql);
 
                 if (mysqli_num_rows($resultado) > 0) {
@@ -60,8 +63,8 @@
                         <tbody>
                             <tr>
                                 <th scope="row"><?php echo $dados['id']; ?></th>
-                                <td><?php echo $dados['nome']; ?></td>
-                                <td>Músculo</td>
+                                <td><?php echo $dados['exercicio_nome']; ?></td>
+                                <td><?php echo $dados['musculo_nome']; ?></td></td>
                                 <td>
                                     <a class="btn btn-warning btn-sm" href="cadastro_musculo.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="edit"></i></a>
                                 </td>
@@ -90,7 +93,7 @@
             </table>
 
             <div class="container text-center">
-                <a class="btn btn-dark btn-lg col-sm-3 me-2" href="cadastro_musculo.php" role="button">Cadastrar</a>
+                <a class="btn btn-dark btn-lg col-sm-3 me-2" href="cadastro_exercicio.php" role="button">Cadastrar</a>
 
                 <a class="btn btn-secondary btn-lg col-sm-3" href="../index.php" role="button">Menu</a>
                 </div>
