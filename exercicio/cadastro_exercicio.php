@@ -12,14 +12,14 @@
       $dados = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
     }
 
-  $urlBanco = "../banco_de_dados/musculos/create_musculos.php";
-  $tituloPagina = "Cadastro de Músculos";
-  $txtBtnVerde = "Cadastrar músculo";
+  $urlBanco = "../banco_de_dados/exercicio/create_exercicio.php";
+  $tituloPagina = "Cadastro de Exercício";
+  $txtBtnVerde = "Cadastrar exercício";
 
   if(isset($dados['id'])) { 
-    $urlBanco = "../banco_de_dados/musculos/update_musculos.php";
-    $tituloPagina = "Atualizar cadastro de músculo";
-    $txtBtnVerde = "Atualizar músculo";
+    $urlBanco = "../banco_de_dados/exercicio/update_exercicio.php";
+    $tituloPagina = "Atualizar cadastro de exercício";
+    $txtBtnVerde = "Atualizar exercício";
   }
 
 ?>
@@ -39,10 +39,10 @@
             <a class="nav-link" href="../index.php">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../exercicio/exercicio_lista.php">Músculos</a>
+            <a class="nav-link" href="../musculos/musculos_lista.php">exercícios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="produtos.php"> --- </a>
+            <a class="nav-link" href="exercicio_lista.php">Exercícios</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="compras.php"> --- </a>
@@ -59,7 +59,7 @@
             <h1 class="text-center mt-5"><?php echo $tituloPagina; ?></h1>
             <form class="form-horizontal col-12" action=<?php echo $urlBanco; ?> method="POST">
                 <div class="mt-1">
-                    <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do músculo" value="<?php if (isset($dados['nome'])) echo $dados['nome'] ?>" required>
+                    <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do exercício" value="<?php if (isset($dados['nome'])) echo $dados['nome'] ?>" required>
                     <?php if (isset($_GET['errosNome'])) { ?>
                         <span class="small-warning">
                             <?php if (isset($_GET['errosNome'])) echo '*' . $_GET['errosNome'] ?>
@@ -67,7 +67,7 @@
                     <?php } ?>
                 </div>
                 <div class="mt-1">
-                    <input type="url" name="link" class="form-control" id="link" placeholder="Link do músculo" value="<?php if (isset($dados['link'])) echo $dados['link'] ?>" required>
+                    <input type="url" name="link" class="form-control" id="link" placeholder="Link do exercício" value="<?php if (isset($dados['link'])) echo $dados['link'] ?>" required>
                     <?php if (isset($_GET['errosLink'])) { ?>
                         <span class="small-warning">
                             <?php if (isset($_GET['errosLink'])) echo '*' . $_GET['errosLink'] ?>
@@ -79,11 +79,11 @@
                     <input name="id" type="hidden" class="form-control" id="id" value="<?php if(isset($dados['id'])) echo $dados['id'] ?>">
                 </div>
                 <div class="text-center mt-1 mb-0">
-                    <button type="text" class="btn btn-success btn-lg col-12" name="btn-cadastrar-musculos" required><?php echo $txtBtnVerde; ?></button>
+                    <button type="text" class="btn btn-success btn-lg col-12" name="btn-cadastrar-exercicio" required><?php echo $txtBtnVerde; ?></button>
                 </div>
             </form>
             <div class="container text-center mt-1">
-                <a class="btn btn-secondary btn-lg col-sm-3" href="musculos_lista.php" role="button">Voltar</a>
+                <a class="btn btn-secondary btn-lg col-sm-3" href="exercicio_lista.php" role="button">Voltar</a>
             </div>
         </div>
     </div>

@@ -15,7 +15,7 @@
             <a class="nav-link" href="./musculos/musculos_lista.php">Músculos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="produtos.php"> --- </a>
+            <a class="nav-link" href="exercicio/exercicio_lista.php">Exercícios</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="compras.php"> --- </a>
