@@ -43,15 +43,14 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Link</th>
-                        <th scope="col">Data de Cadastro</th>
+                        <th scope="col">Musculo</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Deletar</th>
                     </tr>
                 </thead>
 
                 <?php
-                $sql = "SELECT * FROM musculo";
+                $sql = "SELECT * FROM exercicio";
                 $resultado = mysqli_query($connect, $sql);
 
                 if (mysqli_num_rows($resultado) > 0) {
@@ -62,8 +61,7 @@
                             <tr>
                                 <th scope="row"><?php echo $dados['id']; ?></th>
                                 <td><?php echo $dados['nome']; ?></td>
-                                <td><a href="<?php echo $dados['link']; ?>">Link</a></td>
-                                <td><?php echo $dados['data']; ?></td>
+                                <td>Músculo</td>
                                 <td>
                                     <a class="btn btn-warning btn-sm" href="cadastro_musculo.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="edit"></i></a>
                                 </td>
