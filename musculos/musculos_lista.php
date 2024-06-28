@@ -94,7 +94,7 @@
             <div class="container text-center">
                 <a class="btn btn-dark btn-lg col-sm-3 me-2" href="cadastro_musculo.php" role="button">Cadastrar</a>
 
-                <a class="btn btn-secondary btn-lg col-sm-3" href="index.php" role="button">Menu</a>
+                <a class="btn btn-secondary btn-lg col-sm-3" href="../index.php" role="button">Menu</a>
                 </div>
         </div>
         <div class="col">
