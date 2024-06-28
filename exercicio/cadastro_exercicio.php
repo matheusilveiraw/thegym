@@ -7,10 +7,12 @@ $dados[] = '';
 if (isset($_GET['id'])) {
   $id = mysqli_escape_string($connect, $_GET['id']);
 
-  $sql = "SELECT * FROM musculo where id = '$id'";
+  $sql = "SELECT * FROM exercicio where id = '$id'";
   $resultado = mysqli_query($connect, $sql);
   $dados = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
 }
+
+var_dump($_GET['id']);
 
 $urlBanco = "../banco_de_dados/exercicio/create_exercicio.php";
 $tituloPagina = "Cadastro de Exercício";
