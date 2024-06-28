@@ -68,7 +68,7 @@ if (isset($dados['id'])) {
           <?php } ?>
         </div>
         <div class="mt-1">
-          <select class="container form-select" aria-label=".form-select-lg example" required name="cliente" id="cliente">
+          <select class="container form-select" aria-label=".form-select-lg example" required name="musculo" id="musculo">
             <option disabled selected value="">Selecione um músculo</option>
 
             <?php
@@ -86,7 +86,7 @@ if (isset($dados['id'])) {
             <?php
             } else {
             ?>
-              <option disabled value="">Nenhum cliente registrado</option>
+              <option disabled value="">Nenhum musculo registrado</option>
             <?php
             }
             ?>
