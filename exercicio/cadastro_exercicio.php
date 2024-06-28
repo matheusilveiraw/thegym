@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
   $dados = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
 }
 
-var_dump($_GET['id']);
+var_dump($dados);
 
 $urlBanco = "../banco_de_dados/exercicio/create_exercicio.php";
 $tituloPagina = "Cadastro de Exercício";
