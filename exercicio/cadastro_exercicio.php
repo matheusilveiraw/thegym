@@ -10,9 +10,9 @@ if (isset($_GET['id'])) {
   $sql = "SELECT * FROM exercicio where id = '$id'";
   $resultado = mysqli_query($connect, $sql);
   $dados = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
-}
 
-var_dump($dados);
+  var_dump($dados);
+}
 
 $urlBanco = "../banco_de_dados/exercicio/create_exercicio.php";
 $tituloPagina = "Cadastro de Exercício";
@@ -74,13 +74,12 @@ if (isset($dados['id'])) {
             <option disabled selected value="">Selecione um músculo</option>
 
             <?php
-            $sql = "SELECT * FROM musculo";
-            $resultado = mysqli_query($connect, $sql);
-
-            if (mysqli_num_rows($resultado) > 0) {
-              while ($dados = mysqli_fetch_array($resultado)) {
+            $sql2 = "SELECT * FROM musculo";
+            $resultado2 = mysqli_query($connect, $sql2);
+            if (mysqli_num_rows($resultado2) > 0) {
+              while ($dados2 = mysqli_fetch_array($resultado2)) {
             ?>
-                <option value=<?php echo $dados['id'] ?>> <?php echo $dados['nome'] ?></option>
+                <option selected=<?php if($dados2['id'] == $dados['musculo']) echo 'true' ?> value=<?php echo $dados2['id'] ?>> <?php echo $dados2['nome'] ?></option>
               <?php }
 
               ?>
