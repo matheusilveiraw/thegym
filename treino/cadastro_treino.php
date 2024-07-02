@@ -7,17 +7,17 @@ $dados[] = '';
 if (isset($_GET['id'])) {
   $id = mysqli_escape_string($connect, $_GET['id']);
 
-  $sql = "SELECT * FROM exercicio where id = '$id'";
+  $sql = "SELECT * FROM treino where id = '$id'";
   $resultado = mysqli_query($connect, $sql);
   $dados = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
 }
 
-$urlBanco = "../banco_de_dados/exercicio/create_exercicio.php";
+$urlBanco = "../banco_de_dados/treino/create_treino.php";
 $tituloPagina = "Cadastro de Exercício";
 $txtBtnVerde = "Cadastrar exercício";
 
 if (isset($dados['id'])) {
-  $urlBanco = "../banco_de_dados/exercicio/update_exercicio.php";
+  $urlBanco = "../banco_de_dados/treino/update_treino.php";
   $tituloPagina = "Atualizar cadastro de exercício";
   $txtBtnVerde = "Atualizar exercício";
 }
@@ -42,10 +42,10 @@ if (isset($dados['id'])) {
             <a class="nav-link" href="../musculos/musculos_lista.php">Músculos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="exercicio_lista.php">Exercícios</a>
+            <a class="nav-link" href="treino_lista.php">Exercícios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../treino/lista_treino.php"> Treinos </a>
+            <a class="nav-link" href="compras.php"> --- </a>
           </li>
         </ul>
       </div>
@@ -97,11 +97,11 @@ if (isset($dados['id'])) {
           <input name="id" type="hidden" class="form-control" id="id" value="<?php if (isset($dados['id'])) echo $dados['id'] ?>">
         </div>
         <div class="text-center mt-1 mb-0">
-          <button type="text" class="btn btn-success btn-lg col-12" name="btn-cadastrar-exercicio" required><?php echo $txtBtnVerde; ?></button>
+          <button type="text" class="btn btn-success btn-lg col-12" name="btn-cadastrar-treino" required><?php echo $txtBtnVerde; ?></button>
         </div>
       </form>
       <div class="container text-center mt-1">
-        <a class="btn btn-secondary btn-lg col-sm-3" href="exercicio_lista.php" role="button">Voltar</a>
+        <a class="btn btn-secondary btn-lg col-sm-3" href="treino_lista.php" role="button">Voltar</a>
       </div>
     </div>
   </div>

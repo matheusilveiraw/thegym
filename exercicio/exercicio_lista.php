@@ -26,7 +26,7 @@
             <a class="nav-link" href="exercicio_lista.php"> Exercícios </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="compras.php"> --- </a>
+            <a class="nav-link" href="../treino/lista_treino.php"> Treinos </a>
           </li>
         </ul>
       </div>
