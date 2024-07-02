@@ -4,8 +4,7 @@
 
     var_dump($_POST);
 
-    if(isset($_POST['btn-cadastrar-exercicio'])) { //verifica se o btn foi apertado
-        //pegar os dados do formulario passado por submit
+    if(isset($_POST['btn-cadastrar-exercicio'])) { 
         $exercicio = new \App\Model\Exercicio();
 
         $exercicio -> setNome($_POST['nome']);
