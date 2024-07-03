@@ -13,13 +13,13 @@ if (isset($_GET['id'])) {
 }
 
 $urlBanco = "../banco_de_dados/treino/create_treino.php";
-$tituloPagina = "Cadastro de Exercício";
-$txtBtnVerde = "Cadastrar exercício";
+$tituloPagina = "Cadastro de treino";
+$txtBtnVerde = "Cadastrar treino";
 
 if (isset($dados['id'])) {
   $urlBanco = "../banco_de_dados/treino/update_treino.php";
-  $tituloPagina = "Atualizar cadastro de exercício";
-  $txtBtnVerde = "Atualizar exercício";
+  $tituloPagina = "Atualizar cadastro de treino";
+  $txtBtnVerde = "Atualizar treino";
 }
 
 ?>
@@ -39,13 +39,13 @@ if (isset($dados['id'])) {
             <a class="nav-link" href="../index.php">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../musculos/musculos_lista.php">Músculos</a>
+            <a class="nav-link" href="../exercicios/exercicios_lista.php"> Músculos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="treino_lista.php">Exercícios</a>
+            <a class="nav-link" href="../exercicio/exercicio_lista.php"> Exercícios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="compras.php"> --- </a>
+            <a class="nav-link" href="lista_treino.php"> Treinos </a>
           </li>
         </ul>
       </div>
@@ -60,7 +60,7 @@ if (isset($dados['id'])) {
       <form class="form-horizontal col-12" action=<?php echo $urlBanco; ?> method="POST">
 
         <div class="mt-1">
-          <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do exercício" value="<?php if (isset($dados['nome'])) echo $dados['nome'] ?>" required>
+          <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do treino" value="<?php if (isset($dados['nome'])) echo $dados['nome'] ?>" required>
           <?php if (isset($_GET['errosNome'])) { ?>
             <span class="small-warning">
               <?php if (isset($_GET['errosNome'])) echo '*' . $_GET['errosNome'] ?>
@@ -68,17 +68,17 @@ if (isset($dados['id'])) {
           <?php } ?>
         </div>
         <div class="mt-1">
-          <select class="container form-select" aria-label=".form-select-lg example" required name="musculo" id="musculo">
-            <option disabled selected value="">Selecione um músculo</option>
+          <select class="container form-select" aria-label=".form-select-lg example" required name="exercicio1" id="exercicio1">
+            <option disabled selected value="">Selecione o exercício 1</option>
 
             <?php
-            $sql2 = "SELECT * FROM musculo";
-            $resultado2 = mysqli_query($connect, $sql2);
-            if (mysqli_num_rows($resultado2) > 0) {
-              while ($dados2 = mysqli_fetch_array($resultado2)) {
-                $selected = ($dados2['id'] == $dados['musculo']) ? 'selected' : '';
+            $sqlExer = "SELECT * FROM exercicio";
+            $resultadoExer = mysqli_query($connect, $sqlExer);
+            if (mysqli_num_rows($resultadoExer) > 0) {
+              while ($dadosExer = mysqli_fetch_array($resultadoExer)) {
+                $selected = ($dadosExer['id'] == $dados['exercicio']) ? 'selected' : '';
             ?>
-                <option value="<?php echo $dados2['id']; ?>" <?php echo $selected; ?>> <?php echo $dados2['nome']; ?></option>
+                <option value="<?php echo $dadosExer['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExer['nome']; ?></option>
               <?php }
 
               ?>
@@ -86,13 +86,142 @@ if (isset($dados['id'])) {
             <?php
             } else {
             ?>
-              <option disabled value="">Nenhum musculo registrado</option>
+              <option disabled value="">Nenhum exercicio registrado</option>
             <?php
             }
             ?>
           </select>
         </div>
 
+        <div class="mt-1">
+          <select class="container form-select" aria-label=".form-select-lg example" required name="exercicio2" id="exercicio2">
+            <option disabled selected value="">Selecione o exercício 2</option>
+
+            <?php
+            $sqlExer = "SELECT * FROM exercicio";
+            $resultadoExer = mysqli_query($connect, $sqlExer);
+            if (mysqli_num_rows($resultadoExer) > 0) {
+              while ($dadosExer = mysqli_fetch_array($resultadoExer)) {
+                $selected = ($dadosExer['id'] == $dados['exercicio']) ? 'selected' : '';
+            ?>
+                <option value="<?php echo $dadosExer['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExer['nome']; ?></option>
+              <?php }
+
+              ?>
+
+            <?php
+            } else {
+            ?>
+              <option disabled value="">Nenhum exercicio registrado</option>
+            <?php
+            }
+            ?>
+          </select>
+        </div>
+
+        <div class="mt-1">
+          <select class="container form-select" aria-label=".form-select-lg example" required name="exercicio3" id="exercicio3">
+            <option disabled selected value="">Selecione o exercício 3</option>
+
+            <?php
+            $sqlExer = "SELECT * FROM exercicio";
+            $resultadoExer = mysqli_query($connect, $sqlExer);
+            if (mysqli_num_rows($resultadoExer) > 0) {
+              while ($dadosExer = mysqli_fetch_array($resultadoExer)) {
+                $selected = ($dadosExer['id'] == $dados['exercicio']) ? 'selected' : '';
+            ?>
+                <option value="<?php echo $dadosExer['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExer['nome']; ?></option>
+              <?php }
+
+              ?>
+
+            <?php
+            } else {
+            ?>
+              <option disabled value="">Nenhum exercicio registrado</option>
+            <?php
+            }
+            ?>
+          </select>
+        </div>
+
+        <div class="mt-1">
+          <select class="container form-select" aria-label=".form-select-lg example" required name="exercicio4" id="exercicio4">
+            <option disabled selected value="">Selecione o exercício 4</option>
+
+            <?php
+            $sqlExer = "SELECT * FROM exercicio";
+            $resultadoExer = mysqli_query($connect, $sqlExer);
+            if (mysqli_num_rows($resultadoExer) > 0) {
+              while ($dadosExer = mysqli_fetch_array($resultadoExer)) {
+                $selected = ($dadosExer['id'] == $dados['exercicio']) ? 'selected' : '';
+            ?>
+                <option value="<?php echo $dadosExer['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExer['nome']; ?></option>
+              <?php }
+
+              ?>
+
+            <?php
+            } else {
+            ?>
+              <option disabled value="">Nenhum exercicio registrado</option>
+            <?php
+            }
+            ?>
+          </select>
+        </div>
+
+        <div class="mt-1">
+          <select class="container form-select" aria-label=".form-select-lg example" required name="exercicio5" id="exercicio5">
+            <option disabled selected value="">Selecione o exercício 5</option>
+
+            <?php
+            $sqlExer = "SELECT * FROM exercicio";
+            $resultadoExer = mysqli_query($connect, $sqlExer);
+            if (mysqli_num_rows($resultadoExer) > 0) {
+              while ($dadosExer = mysqli_fetch_array($resultadoExer)) {
+                $selected = ($dadosExer['id'] == $dados['exercicio']) ? 'selected' : '';
+            ?>
+                <option value="<?php echo $dadosExer['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExer['nome']; ?></option>
+              <?php }
+
+              ?>
+
+            <?php
+            } else {
+            ?>
+              <option disabled value="">Nenhum exercicio registrado</option>
+            <?php
+            }
+            ?>
+          </select>
+        </div>
+
+        <div class="mt-1">
+          <select class="container form-select" aria-label=".form-select-lg example" required name="exercicio6" id="exercicio6">
+            <option disabled selected value="">Selecione o exercício 6</option>
+
+            <?php
+            $sqlExer = "SELECT * FROM exercicio";
+            $resultadoExer = mysqli_query($connect, $sqlExer);
+            if (mysqli_num_rows($resultadoExer) > 0) {
+              while ($dadosExer = mysqli_fetch_array($resultadoExer)) {
+                $selected = ($dadosExer['id'] == $dados['exercicio']) ? 'selected' : '';
+            ?>
+                <option value="<?php echo $dadosExer['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExer['nome']; ?></option>
+              <?php }
+
+              ?>
+
+            <?php
+            } else {
+            ?>
+              <option disabled value="">Nenhum exercicio registrado</option>
+            <?php
+            }
+            ?>
+          </select>
+        </div>
         <div class="mt-1">
           <input name="id" type="hidden" class="form-control" id="id" value="<?php if (isset($dados['id'])) echo $dados['id'] ?>">
         </div>

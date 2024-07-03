@@ -76,7 +76,6 @@ include_once '../banco_de_dados/connect.php';
         if (mysqli_num_rows($resultado) > 0) {
 
           while ($dados = mysqli_fetch_array($resultado)) {
-            var_dump($dados);
         ?>
             <tbody>
               <tr>
