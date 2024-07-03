@@ -57,12 +57,12 @@ include_once '../banco_de_dados/connect.php';
         <?php
         $sql = "SELECT t.id, 
                         t.nome, 
-                        e1.nome AS nome_exercicio1,
-                        e2.nome AS nome_exercicio2,
-                        e3.nome AS nome_exercicio3,
-                        e4.nome AS nome_exercicio4,
-                        e5.nome AS nome_exercicio5,
-                        e6.nome AS nome_exercicio6
+                        e1.nome AS exercicio1,
+                        e2.nome AS exercicio2,
+                        e3.nome AS exercicio3,
+                        e4.nome AS exercicio4,
+                        e5.nome AS exercicio5,
+                        e6.nome AS exercicio6
                 FROM treino AS t
                 INNER JOIN exercicio AS e1 ON t.exercicio1 = e1.id
                 INNER JOIN exercicio AS e2 ON t.exercicio2 = e2.id
@@ -76,6 +76,7 @@ include_once '../banco_de_dados/connect.php';
         if (mysqli_num_rows($resultado) > 0) {
 
           while ($dados = mysqli_fetch_array($resultado)) {
+            var_dump($dados);
         ?>
             <tbody>
               <tr>
