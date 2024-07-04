@@ -26,10 +26,10 @@ include_once '../banco_de_dados/connect.php';
             <a class="nav-link" href="../exercicio/exercicio_lista.php"> Exercícios </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="lista_treino.php"> Treinos </a>
+            <a class="nav-link" href="../treino/lista_treino.php"> Treinos </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../ficha_treino/ficha_treino_lista.php"> Ficha Treino </a>
+            <a class="nav-link" href="ficha_treino_lista.php"> Ficha Treino </a>
           </li>
         </ul>
       </div>
@@ -46,33 +46,19 @@ include_once '../banco_de_dados/connect.php';
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nome</th>
-            <th scope="col">Exércicio 1</th>
-            <th scope="col">Exércicio 2</th>
-            <th scope="col">Exércicio 3</th>
-            <th scope="col">Exércicio 4</th>
-            <th scope="col">Exércicio 5</th>
-            <th scope="col">Exércicio 6</th>
+            <th scope="col">Treino 1</th>
+            <th scope="col">Treino 2</th>
+            <th scope="col">Treino 3</th>
+            <th scope="col">Treino 4</th>
+            <th scope="col">Treino 5</th>
+            <th scope="col">Visualizar</th>
             <th scope="col">Editar</th>
             <th scope="col">Deletar</th>
           </tr>
         </thead>
 
         <?php
-        $sql = "SELECT t.id, 
-                        t.nome, 
-                        e1.nome AS exercicio1,
-                        e2.nome AS exercicio2,
-                        e3.nome AS exercicio3,
-                        e4.nome AS exercicio4,
-                        e5.nome AS exercicio5,
-                        e6.nome AS exercicio6
-                FROM treino AS t
-                INNER JOIN exercicio AS e1 ON t.exercicio1 = e1.id
-                INNER JOIN exercicio AS e2 ON t.exercicio2 = e2.id
-                INNER JOIN exercicio AS e3 ON t.exercicio3 = e3.id
-                INNER JOIN exercicio AS e4 ON t.exercicio4 = e4.id
-                INNER JOIN exercicio AS e5 ON t.exercicio5 = e5.id
-                INNER JOIN exercicio AS e6 ON t.exercicio6 = e6.id;";
+        $sql = "SELECT * FROM ficha_treino";
 
         $resultado = mysqli_query($connect, $sql);
 
@@ -84,17 +70,17 @@ include_once '../banco_de_dados/connect.php';
               <tr>
                 <th scope="row"><?php echo $dados['id']; ?></th>
                 <td><?php echo $dados['nome']; ?></td>
-                <td><?php echo $dados['exercicio1']; ?></td>
+                <td><?php echo $dados['treino1']; ?></td>
                 </td>
-                <td><?php echo $dados['exercicio2']; ?></td>
+                <td><?php echo $dados['treino2']; ?></td>
                 </td>
-                <td><?php echo $dados['exercicio3']; ?></td>
+                <td><?php echo $dados['treino3']; ?></td>
                 </td>
-                <td><?php echo $dados['exercicio4']; ?></td>
+                <td><?php echo $dados['treino4']; ?></td>
                 </td>
-                <td><?php echo $dados['exercicio5']; ?></td>
+                <td><?php echo $dados['treino5']; ?></td>
                 </td>
-                <td><?php echo $dados['exercicio6']; ?></td>
+                <td><?php echo $dados['treino6']; ?></td>
                 </td>
                 <td>
                   <a class="btn btn-warning btn-sm" href="cadastro_treino.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="edit"></i></a>

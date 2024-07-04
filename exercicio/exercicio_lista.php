@@ -28,6 +28,9 @@
           <li class="nav-item">
             <a class="nav-link" href="../treino/lista_treino.php"> Treinos </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../ficha_treino/ficha_treino_lista.php"> Ficha Treino </a>
+          </li>
         </ul>
       </div>
     </div>
