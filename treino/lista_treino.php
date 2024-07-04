@@ -58,21 +58,19 @@ include_once '../banco_de_dados/connect.php';
         </thead>
 
         <?php
-        $sql = "SELECT t.id, 
-                        t.nome, 
-                        e1.nome AS exercicio1,
-                        e2.nome AS exercicio2,
-                        e3.nome AS exercicio3,
-                        e4.nome AS exercicio4,
-                        e5.nome AS exercicio5,
-                        e6.nome AS exercicio6
-                FROM treino AS t
-                INNER JOIN exercicio AS e1 ON t.exercicio1 = e1.id
-                INNER JOIN exercicio AS e2 ON t.exercicio2 = e2.id
-                INNER JOIN exercicio AS e3 ON t.exercicio3 = e3.id
-                INNER JOIN exercicio AS e4 ON t.exercicio4 = e4.id
-                INNER JOIN exercicio AS e5 ON t.exercicio5 = e5.id
-                INNER JOIN exercicio AS e6 ON t.exercicio6 = e6.id;";
+        $sql = "SELECT 	ft.id, 
+                        ft.nome, 
+                        t1.nome AS exercicio1,
+                        t2.nome AS exercicio2,
+                        t3.nome AS exercicio3,
+                        t4.nome AS exercicio4,
+                        t5.nome AS exercicio5
+                        FROM ficha_treino AS ft
+                INNER JOIN treino AS t1 ON ft.treino1 = t1.id
+                INNER JOIN treino AS t2 ON ft.treino2 = t2.id
+                INNER JOIN treino AS t3 ON ft.treino3 = t3.id
+                INNER JOIN treino AS t4 ON ft.treino4 = t4.id
+                INNER JOIN treino AS t5 ON ft.treino5 = t5.id;";
 
         $resultado = mysqli_query($connect, $sql);
 
@@ -94,7 +92,6 @@ include_once '../banco_de_dados/connect.php';
                 </td>
                 <td><?php echo $dados['exercicio5']; ?></td>
                 </td>
-                <td><?php echo $dados['exercicio6']; ?></td>
                 </td>
                 <td>
                   <a class="btn btn-warning btn-sm" href="cadastro_treino.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="edit"></i></a>

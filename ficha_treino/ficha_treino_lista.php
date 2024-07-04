@@ -40,7 +40,7 @@ include_once '../banco_de_dados/connect.php';
   <div class="row">
     <div class="col"> </div>
     <div class="col-10">
-      <h1>Treinos</h1>
+      <h1>Ficha de Treinos</h1>
       <table class="table">
         <thead>
           <tr>
@@ -58,7 +58,19 @@ include_once '../banco_de_dados/connect.php';
         </thead>
 
         <?php
-        $sql = "SELECT * FROM ficha_treino";
+        $sql = "SELECT 	ft.id, 
+                        ft.nome, 
+                        t1.nome AS treino1,
+                        t2.nome AS treino2,
+                        t3.nome AS treino3,
+                        t4.nome AS treino4,
+                        t5.nome AS treino5
+                FROM ficha_treino AS ft
+                INNER JOIN treino AS t1 ON ft.treino1 = t1.id
+                INNER JOIN treino AS t2 ON ft.treino2 = t2.id
+                INNER JOIN treino AS t3 ON ft.treino3 = t3.id
+                INNER JOIN treino AS t4 ON ft.treino4 = t4.id
+                INNER JOIN treino AS t5 ON ft.treino5 = t5.id;";
 
         $resultado = mysqli_query($connect, $sql);
 
