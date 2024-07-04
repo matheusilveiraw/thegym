@@ -7,7 +7,7 @@ $dados[] = '';
 if (isset($_GET['id'])) {
   $id = mysqli_escape_string($connect, $_GET['id']);
 
-  $sql = "SELECT * FROM treino where id = '$id'";
+  $sql = "SELECT * FROM ficha_treino where id = '$id'";
   $resultado = mysqli_query($connect, $sql);
   $dados = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
 }
