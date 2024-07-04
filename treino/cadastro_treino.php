@@ -76,7 +76,7 @@ if (isset($dados['id'])) {
             $resultadoExer = mysqli_query($connect, $sqlExer);
             if (mysqli_num_rows($resultadoExer) > 0) {
               while ($dadosExer = mysqli_fetch_array($resultadoExer)) {
-                $selected = ($dadosExer['id'] == $dados['exercicio']) ? 'selected' : '';
+                $selected = ($dadosExer['id'] == $dados['exercicio1']) ? 'selected' : '';
             ?>
                 <option value="<?php echo $dadosExer['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExer['nome']; ?></option>
               <?php }
@@ -98,13 +98,13 @@ if (isset($dados['id'])) {
             <option disabled selected value="">Selecione o exercício 2</option>
 
             <?php
-            $sqlExer = "SELECT * FROM exercicio";
-            $resultadoExer = mysqli_query($connect, $sqlExer);
-            if (mysqli_num_rows($resultadoExer) > 0) {
-              while ($dadosExer = mysqli_fetch_array($resultadoExer)) {
-                $selected = ($dadosExer['id'] == $dados['exercicio']) ? 'selected' : '';
+            $sqlExercicio = "SELECT * FROM exercicio";
+            $resultadoExercicio = mysqli_query($connect, $sqlExercicio);
+            if (mysqli_num_rows($resultadoExercicio) > 0) {
+              while ($dadosExercicio = mysqli_fetch_array($resultadoExercicio)) {
+                $selected = ($dadosExercicio['id'] == $dados['exercicio2']) ? 'selected' : '';
             ?>
-                <option value="<?php echo $dadosExer['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExer['nome']; ?></option>
+                <option value="<?php echo $dadosExercicio['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExercicio['nome']; ?></option>
               <?php }
 
               ?>
@@ -128,7 +128,7 @@ if (isset($dados['id'])) {
             $resultadoExer = mysqli_query($connect, $sqlExer);
             if (mysqli_num_rows($resultadoExer) > 0) {
               while ($dadosExer = mysqli_fetch_array($resultadoExer)) {
-                $selected = ($dadosExer['id'] == $dados['exercicio']) ? 'selected' : '';
+                $selected = ($dadosExer['id'] == $dados['exercicio3']) ? 'selected' : '';
             ?>
                 <option value="<?php echo $dadosExer['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExer['nome']; ?></option>
               <?php }
@@ -154,7 +154,7 @@ if (isset($dados['id'])) {
             $resultadoExer = mysqli_query($connect, $sqlExer);
             if (mysqli_num_rows($resultadoExer) > 0) {
               while ($dadosExer = mysqli_fetch_array($resultadoExer)) {
-                $selected = ($dadosExer['id'] == $dados['exercicio']) ? 'selected' : '';
+                $selected = ($dadosExer['id'] == $dados['exercicio4']) ? 'selected' : '';
             ?>
                 <option value="<?php echo $dadosExer['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExer['nome']; ?></option>
               <?php }
@@ -180,7 +180,7 @@ if (isset($dados['id'])) {
             $resultadoExer = mysqli_query($connect, $sqlExer);
             if (mysqli_num_rows($resultadoExer) > 0) {
               while ($dadosExer = mysqli_fetch_array($resultadoExer)) {
-                $selected = ($dadosExer['id'] == $dados['exercicio']) ? 'selected' : '';
+                $selected = ($dadosExer['id'] == $dados['exercicio5']) ? 'selected' : '';
             ?>
                 <option value="<?php echo $dadosExer['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExer['nome']; ?></option>
               <?php }
@@ -206,7 +206,7 @@ if (isset($dados['id'])) {
             $resultadoExer = mysqli_query($connect, $sqlExer);
             if (mysqli_num_rows($resultadoExer) > 0) {
               while ($dadosExer = mysqli_fetch_array($resultadoExer)) {
-                $selected = ($dadosExer['id'] == $dados['exercicio']) ? 'selected' : '';
+                $selected = ($dadosExer['id'] == $dados['exercicio6']) ? 'selected' : '';
             ?>
                 <option value="<?php echo $dadosExer['id']; ?>" <?php echo $selected; ?>> <?php echo $dadosExer['nome']; ?></option>
               <?php }
@@ -222,6 +222,11 @@ if (isset($dados['id'])) {
             ?>
           </select>
         </div>
+
+        <div class="mt-1">
+          <input name="id" type="hidden" class="form-control" id="id" value="<?php if (isset($dados['id'])) echo $dados['id'] ?>">
+        </div>
+
         <div class="mt-1">
           <input name="id" type="hidden" class="form-control" id="id" value="<?php if (isset($dados['id'])) echo $dados['id'] ?>">
         </div>
@@ -230,7 +235,7 @@ if (isset($dados['id'])) {
         </div>
       </form>
       <div class="container text-center mt-1">
-        <a class="btn btn-secondary btn-lg col-sm-3" href="treino_lista.php" role="button">Voltar</a>
+        <a class="btn btn-secondary btn-lg col-sm-3" href="lista_treino.php" role="button">Voltar</a>
       </div>
     </div>
   </div>

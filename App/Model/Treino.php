@@ -3,6 +3,7 @@
 namespace App\Model;
 
 class Treino {
+    private $id;
     private $nome;
     private $exercicio1;
     private $exercicio2;
@@ -12,6 +13,10 @@ class Treino {
     private $exercicio6;
 
     //SETS
+    public function setId($id) { 
+        $this->id = $id;
+    }
+
     public function setNome($nome) {
         $this->nome = $nome;
     }
@@ -67,6 +72,10 @@ class Treino {
 
     public function getExercicio6() {
         return $this->exercicio6;
+    }
+
+    public function getId() { 
+        return $this->id;
     }
 }
 
