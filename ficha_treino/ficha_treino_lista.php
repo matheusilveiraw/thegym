@@ -80,10 +80,10 @@ include_once '../banco_de_dados/connect.php';
                 </td>
                 <td><?php echo $dados['treino5']; ?></td>
                 </td>
-                <td><?php echo $dados['treino6']; ?></td>
+                <td> LUPA P/ VISUALIZAR </td>
                 </td>
                 <td>
-                  <a class="btn btn-warning btn-sm" href="cadastro_treino.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="edit"></i></a>
+                  <a class="btn btn-warning btn-sm" href="ficha_treino_cadastro.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="edit"></i></a>
                 </td>
                 <td>
                   <a class="btn btn-danger btn-sm" href="../banco_de_dados/treino/delete_treino.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="trash-2"></i></a>
@@ -114,7 +114,7 @@ include_once '../banco_de_dados/connect.php';
       </table>
 
       <div class="container text-center">
-        <a class="btn btn-dark btn-lg col-sm-3 me-2" href="cadastro_treino.php" role="button">Cadastrar</a>
+        <a class="btn btn-dark btn-lg col-sm-3 me-2" href="ficha_treino_cadastro.php" role="button">Cadastrar</a>
 
         <a class="btn btn-secondary btn-lg col-sm-3" href="../index.php" role="button">Menu</a>
       </div>

@@ -1,0 +1,24 @@
+<?php 
+    namespace App\Model;
+
+    class FichaTreinoDao { 
+
+            public function create(FichaTreino $ft) { 
+                $sql = 'INSERT INTO ficha_treino (nome, treino1, treino2, treino3, treino4, treino5) VALUES (?, ?, ?, ?, ?, ?)';
+
+                $stmt = Conexao::getConn()->prepare($sql);
+                $stmt->bindValue(1, $ft->getNome());
+                $stmt->bindValue(2, $ft->getTreino1());
+                $stmt->bindValue(3, $ft->getTreino2());
+                $stmt->bindValue(4, $ft->getTreino3());
+                $stmt->bindValue(5, $ft->getTreino4());
+                $stmt->bindValue(6, $ft->getTreino5());
+
+                if ($stmt->execute()) {
+                    header('Location: ../../ficha_treino/ficha_treino_lista.php?cadastroSucesso');
+                } else {
+                    print_r($stmt->errorInfo());
+                }
+            }
+    }
+?>
