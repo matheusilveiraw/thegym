@@ -86,7 +86,7 @@ include_once '../banco_de_dados/connect.php';
                   <a class="btn btn-warning btn-sm" href="ficha_treino_cadastro.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="edit"></i></a>
                 </td>
                 <td>
-                  <a class="btn btn-danger btn-sm" href="../banco_de_dados/treino/delete_treino.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="trash-2"></i></a>
+                  <a class="btn btn-danger btn-sm" href="../banco_de_dados/ficha_treino/delete_ficha_treino.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="trash-2"></i></a>
                 </td>
               </tr>
             </tbody>
