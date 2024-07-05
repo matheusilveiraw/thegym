@@ -31,6 +31,9 @@
           <li class="nav-item">
             <a class="nav-link" href="../ficha_treino/ficha_treino_lista.php"> Ficha Treino </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../cliente/cliente_lista.php"> Clientes </a>
+          </li>
         </ul>
       </div>
     </div>
