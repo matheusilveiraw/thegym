@@ -105,7 +105,7 @@ include_once '../banco_de_dados/connect.php';
             </table>
 
             <div class="container text-center">
-                <a class="btn btn-dark btn-lg col-sm-3 me-2" href="ficha_treino_cadastro.php" role="button">Cadastrar</a>
+                <a class="btn btn-dark btn-lg col-sm-3 me-2" href="cliente_cadastro.php" role="button">Cadastrar</a>
 
                 <a class="btn btn-secondary btn-lg col-sm-3" href="../index.php" role="button">Menu</a>
             </div>

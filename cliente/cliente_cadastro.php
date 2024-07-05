@@ -1,0 +1,139 @@
+<?php
+include_once '../includes/header.php';
+include_once '../banco_de_dados/connect.php';
+
+$dados[] = '';
+
+if (isset($_GET['id'])) {
+  $id = mysqli_escape_string($connect, $_GET['id']);
+
+  $sql = "SELECT * FROM cliente where id = '$id'";
+  $resultado = mysqli_query($connect, $sql);
+  $dados = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
+}
+
+$urlBanco = "../banco_de_dados/cliente/create_cliente.php";
+$tituloPagina = "Cadastro de Cliente";
+$txtBtnVerde = "Cadastrar Cliente";
+
+if (isset($dados['id'])) {
+  $urlBanco = "../banco_de_dados/cliente/update_cliente.php";
+  $tituloPagina = "Atualizar cadastro de Cliente";
+  $txtBtnVerde = "Atualizar Cliente";
+}
+
+?>
+<a class="navbar-brand" href="../index.php">The Gym</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.php">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../musculos/musculos_lista.php">Músculos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cliente_lista.php">Exercícios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../treino/lista_treino.php"> Treinos </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../ficha_treino/ficha_treino_lista.php"> Ficha Treino </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cliente_lista.php"> Clientes </a>
+          </li>
+        </ul>
+      </div>
+</div>
+</nav>
+
+
+<div class="container flex-grow-1">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <h1 class="text-center mt-5"><?php echo $tituloPagina; ?></h1>
+      <form class="form-horizontal col-12" action=<?php echo $urlBanco; ?> method="POST">
+
+        <div class="mt-1">
+          <input type="text" name="nome" class="form-control" id="nome" placeholder="Cliente" value="<?php if (isset($dados['nome'])) echo $dados['nome'] ?>" required>
+          <?php if (isset($_GET['errosNome'])) { ?>
+            <span class="small-warning">
+              <?php if (isset($_GET['errosNome'])) echo '*' . $_GET['errosNome'] ?>
+            </span>
+          <?php } ?>
+        </div>
+
+        <div class="mt-1">
+          <input type="number" min="0" max="100" name="idade" class="form-control" id="idade" placeholder="Idade" value="<?php if (isset($dados['idade'])) echo $dados['idade'] ?>" required>
+          <?php if (isset($_GET['errosIdade'])) { ?>
+            <span class="small-warning">
+              <?php if (isset($_GET['errosIdade'])) echo '*' . $_GET['errosIdade'] ?>
+            </span>
+          <?php } ?>
+        </div>
+
+        <div class="mt-1">
+          <input type="text" name="cpf" class="form-control" id="cpf" placeholder="CPF" value="<?php if (isset($dados['cpf'])) echo $dados['cpf'] ?>" required>
+          <?php if (isset($_GET['errosCpf'])) { ?>
+            <span class="small-warning">
+              <?php if (isset($_GET['errosCpf'])) echo '*' . $_GET['errosCpf'] ?>
+            </span>
+          <?php } ?>
+        </div>
+
+        <div class="mt-1">
+          <select class="container form-select" aria-label=".form-select-lg example" required name="ficha_treino" id="ficha_treino">
+            <option disabled selected value="">Selecione uma ficha treino</option>
+
+            <?php
+            $sql2 = "SELECT * FROM ficha_treino";
+            $resultado2 = mysqli_query($connect, $sql2);
+            if (mysqli_num_rows($resultado2) > 0) {
+              while ($dados2 = mysqli_fetch_array($resultado2)) {
+                $selected = ($dados2['id'] == $dados['ficha_treino']) ? 'selected' : '';
+            ?>
+                <option value="<?php echo $dados2['id']; ?>" <?php echo $selected; ?>> <?php echo $dados2['nome']; ?></option>
+              <?php }
+
+              ?>
+
+            <?php
+            } else {
+            ?>
+              <option disabled value="">Nenhum ficha de treino registrado</option>
+            <?php
+            }
+            ?>
+          </select>
+        </div>
+
+
+
+        <div class="mt-1">
+          <input name="id" type="hidden" class="form-control" id="id" value="<?php if (isset($dados['id'])) echo $dados['id'] ?>">
+        </div>
+        <div class="text-center mt-1 mb-0">
+          <button type="text" class="btn btn-success btn-lg col-12" name="btn-cadastrar-cliente" required><?php echo $txtBtnVerde; ?></button>
+        </div>
+      </form>
+      <div class="container text-center mt-1">
+        <a class="btn btn-secondary btn-lg col-sm-3" href="cliente_lista.php" role="button">Voltar</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php
+include_once '../includes/footer.php';
+?>
