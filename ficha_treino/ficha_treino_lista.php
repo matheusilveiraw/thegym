@@ -83,17 +83,11 @@ include_once '../banco_de_dados/connect.php';
                 <th scope="row"><?php echo $dados['id']; ?></th>
                 <td><?php echo $dados['nome']; ?></td>
                 <td><?php echo $dados['treino1']; ?></td>
-                </td>
                 <td><?php echo $dados['treino2']; ?></td>
-                </td>
                 <td><?php echo $dados['treino3']; ?></td>
-                </td>
                 <td><?php echo $dados['treino4']; ?></td>
-                </td>
                 <td><?php echo $dados['treino5']; ?></td>
-                </td>
                 <td> LUPA P/ VISUALIZAR </td>
-                </td>
                 <td>
                   <a class="btn btn-warning btn-sm" href="ficha_treino_cadastro.php?id=<?php echo $dados['id'] ?>" role="button"><i data-feather="edit"></i></a>
                 </td>
