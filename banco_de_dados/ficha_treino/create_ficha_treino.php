@@ -9,10 +9,10 @@
 
         $fichaTreino -> setNome($_POST['nome']);
         $fichaTreino -> setTreino1($_POST['treino1']);
-        $fichaTreino -> setTreino2($_POST['treino2']);
-        $fichaTreino -> setTreino3($_POST['treino3']);
-        $fichaTreino -> setTreino4($_POST['treino4']);
-        $fichaTreino -> setTreino5($_POST['treino5']);
+        if(isset($_POST['treino2'])) { $fichaTreino -> setTreino2($_POST['treino2']); } 
+        if(isset($_POST['treino3'])) { $fichaTreino -> setTreino3($_POST['treino3']); } 
+        if(isset($_POST['treino4'])) { $fichaTreino -> setTreino4($_POST['treino4']); } 
+        if(isset($_POST['treino5'])) { $fichaTreino -> setTreino5($_POST['treino5']); } 
 
         $treinoFichaDao = new \App\Model\FichaTreinoDao();
 
