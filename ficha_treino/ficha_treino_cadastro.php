@@ -96,7 +96,7 @@ if (isset($dados['id'])) {
         </div>
 
         <div class="mt-1">
-          <select class="container form-select" aria-label=".form-select-lg example" required name="treino2" id="treino2">
+          <select class="container form-select" aria-label=".form-select-lg example" name="treino2" id="treino2">
             <option disabled selected value="">Selecione o treino 2</option>
 
             <?php
@@ -122,7 +122,7 @@ if (isset($dados['id'])) {
         </div>
 
         <div class="mt-1">
-          <select class="container form-select" aria-label=".form-select-lg example" required name="treino3" id="treino3">
+          <select class="container form-select" aria-label=".form-select-lg example" name="treino3" id="treino3">
             <option disabled selected value="">Selecione o treino 3</option>
 
             <?php
@@ -148,7 +148,7 @@ if (isset($dados['id'])) {
         </div>
 
         <div class="mt-1">
-          <select class="container form-select" aria-label=".form-select-lg example" required name="treino4" id="treino4">
+          <select class="container form-select" aria-label=".form-select-lg example" name="treino4" id="treino4">
             <option disabled selected value="">Selecione o treino 4</option>
 
             <?php
@@ -174,7 +174,7 @@ if (isset($dados['id'])) {
         </div>
 
         <div class="mt-1">
-          <select class="container form-select" aria-label=".form-select-lg example" required name="treino5" id="treino5">
+          <select class="container form-select" aria-label=".form-select-lg example" name="treino5" id="treino5">
             <option disabled selected value="">Selecione o treino 5</option>
 
             <?php
