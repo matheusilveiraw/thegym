@@ -58,7 +58,10 @@ include_once '../banco_de_dados/connect.php';
                 </thead>
 
                 <?php
-                $sql = "SELECT * FROM cliente";
+                $sql = "SELECT c.id, c.nome, c.cpf, c.idade, 
+                            ft.nome AS ficha_treino 
+                        FROM `cliente` AS c
+                        JOIN ficha_treino AS ft ON c.ficha_treino = ft.id";
 
                 $resultado = mysqli_query($connect, $sql);
 
