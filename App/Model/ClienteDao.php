@@ -31,5 +31,24 @@
                     print_r($stmt->errorInfo());
                 }
             }
+
+            public function update(Cliente $m) { 
+                $sql = 'UPDATE cliente SET nome = ?, idade = ?, cpf = ?, ficha_treino = ? WHERE id = ?';
+
+                $stmt = Conexao::getConn()->prepare($sql);
+                $stmt->bindValue(1, $m->getNome());
+                $stmt->bindValue(2, $m->getIdade());
+                $stmt->bindValue(3, $m->getCpf());
+                $stmt->bindValue(4, $m->getFichaTreino());
+                $stmt->bindValue(5, $m->getId());
+
+                $stmt->execute();
+
+                if ($stmt->execute()) {
+                    header('Location: ../../cliente/cliente_lista.php?atualizaoSucesso');
+                } else {
+                    print_r($stmt->errorInfo());
+                }
+            }
     }
 ?>

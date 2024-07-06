@@ -33,7 +33,6 @@
                 } else {
                     print_r($stmt->errorInfo());
                 }
-
             }
 
             public function delete($id) { 
