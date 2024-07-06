@@ -49,7 +49,6 @@ include_once '../banco_de_dados/connect.php';
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Sobrenome</th>
                         <th scope="col">CPF</th>
                         <th scope="col">Idade</th>
                         <th scope="col">Ficha Treino</th>
@@ -71,7 +70,6 @@ include_once '../banco_de_dados/connect.php';
                             <tr>
                                 <th scope="row"><?php echo $dados['id']; ?></th>
                                 <td><?php echo $dados['nome']; ?></td>
-                                <td><?php echo $dados['sobrenome']; ?></td>
                                 <td><?php echo $dados['cpf']; ?></td>
                                 <td><?php echo $dados['idade']; ?></td>
                                 <td><?php echo $dados['ficha_treino']; ?></td>
@@ -88,7 +86,6 @@ include_once '../banco_de_dados/connect.php';
                     }
                 } else { ?>
                     <tr>
-                        <td>-</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>

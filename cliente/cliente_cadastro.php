@@ -57,8 +57,6 @@ if (isset($dados['id'])) {
       </div>
 </div>
 </nav>
-
-
 <div class="container flex-grow-1">
   <div class="row justify-content-center">
     <div class="col-10">
@@ -117,9 +115,6 @@ if (isset($dados['id'])) {
             ?>
           </select>
         </div>
-
-
-
         <div class="mt-1">
           <input name="id" type="hidden" class="form-control" id="id" value="<?php if (isset($dados['id'])) echo $dados['id'] ?>">
         </div>
