@@ -17,5 +17,19 @@
                     print_r($stmt->errorInfo());
                 }
             }
+
+            public function delete($id) { 
+                $sql = 'DELETE FROM cliente WHERE id = ?';
+
+                $stmt = Conexao::getConn()->prepare($sql);
+                $stmt->bindValue(1, $id);
+                $stmt-> execute();
+
+                if ($stmt->execute()) {
+                    header('Location: ../../cliente/cliente_lista.php?deleteSucesso');
+                } else {
+                    print_r($stmt->errorInfo());
+                }
+            }
     }
 ?>
