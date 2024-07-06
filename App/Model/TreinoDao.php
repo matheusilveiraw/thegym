@@ -15,8 +15,6 @@
                 $stmt->bindValue(6, $t->getExercicio5());
                 $stmt->bindValue(7, $t->getExercicio6());
 
-                echo 'chegou aqui';
-
                 if ($stmt->execute()) {
                     header('Location: ../../treino/lista_treino.php?cadastroSucesso');
                 } else {
