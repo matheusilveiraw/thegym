@@ -1,16 +1,18 @@
 <?php
-    require_once '../../vendor/autoload.php';
-    require_once '../connect.php';
+require_once '../../vendor/autoload.php';
+require_once '../connect.php';
+require_once '../../includes/limparHtml.php';
 
-    if (isset($_POST['btn-cadastrar-exercicio'])) {
-        $exercicio = new \App\Model\Exercicio();
+$nome = limparHtml($_POST['nome']);
 
-        $exercicio->setId($_POST['id']);
-        $exercicio->setNome($_POST['nome']);
-        $exercicio->setMusculo($_POST['musculo']);
+if (isset($_POST['btn-cadastrar-exercicio'])) {
+    $exercicio = new \App\Model\Exercicio();
 
-        $exercicioDao = new \App\Model\ExercicioDao();
+    $exercicio->setId($_POST['id']);
+    $exercicio->setNome($nome);
+    $exercicio->setMusculo($_POST['musculo']);
 
-        $exercicioDao->update($exercicio);
-    }
-?>
+    $exercicioDao = new \App\Model\ExercicioDao();
+
+    $exercicioDao->update($exercicio);
+}
