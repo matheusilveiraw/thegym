@@ -2,16 +2,21 @@
 require_once '../../vendor/autoload.php';
 require_once '../connect.php';
 require_once '../../includes/limparHtml.php';
-
-$nome = limparHtml($_POST['nome']);
+require_once '../../includes/sqlInjection.php';
 
 if (isset($_POST['btn-cadastrar-exercicio'])) {
-    $exercicio = new \App\Model\Exercicio();
+    $nome = limparHtml($_POST['nome']);
 
-    $exercicio->setNome($nome);
-    $exercicio->setMusculo($_POST['musculo']);
+    if (detectaSqlInjection($nome) || detectaSqlInjection($link)) {
+        header('Location: ../../exercicio/exercicio_lista.php?sqlError');
+    } else {
+        $exercicio = new \App\Model\Exercicio();
 
-    $exercicioDao = new \App\Model\ExercicioDao();
-
-    $exercicioDao->create($exercicio);
+        $exercicio->setNome($nome);
+        $exercicio->setMusculo($_POST['musculo']);
+    
+        $exercicioDao = new \App\Model\ExercicioDao();
+    
+        $exercicioDao->create($exercicio);
+    }
 }
