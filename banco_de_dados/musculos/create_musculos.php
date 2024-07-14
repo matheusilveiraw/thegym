@@ -3,7 +3,6 @@ require_once '../../vendor/autoload.php';
 require_once '../connect.php';
 require_once '../../includes/limparHtml.php';
 
-
 $nome = limparHtml($_POST['nome']);
 $link = limparHtml($_POST['link']);
 
