@@ -45,7 +45,7 @@
                 $stmt->execute();
 
                 if ($stmt->execute()) {
-                    header('Location: ../../cliente/cliente_lista.php?atualizaoSucesso');
+                    header('Location: ../../cliente/cliente_lista.php?attSucesso');
                 } else {
                     print_r($stmt->errorInfo());
                 }
