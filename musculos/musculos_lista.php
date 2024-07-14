@@ -60,13 +60,6 @@
     </div>
   <?php
   }
-  if (isset($_GET['passouCodigoHtml'])) {
-  ?>
-    <div class="alert alert-danger" role="alert">
-      Erro! Tentou passar um código HTML!
-    </div>
-  <?php
-  }
   ?>
 
   <div class="container text-center flex-grow-1 mt-5">

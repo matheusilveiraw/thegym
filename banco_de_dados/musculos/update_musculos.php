@@ -2,8 +2,6 @@
     require_once '../../vendor/autoload.php';
     require_once '../connect.php';
 
-    var_dump($_POST);
-
     if(isset($_POST['btn-cadastrar-musculos'])) {
         $musculo = new \App\Model\Musculo();
 
