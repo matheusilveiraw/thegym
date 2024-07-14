@@ -1,10 +1,8 @@
 <?php
 require_once '../../vendor/autoload.php';
 require_once '../connect.php';
+require_once '../../includes/limparHtml.php';
 
-function limparHtml($data) {
-    return htmlspecialchars(strip_tags($data), ENT_QUOTES, 'UTF-8');
-}
 
 $nome = limparHtml($_POST['nome']);
 $link = limparHtml($_POST['link']);
