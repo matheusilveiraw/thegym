@@ -29,7 +29,7 @@
                 $stmt->execute();
 
                 if ($stmt->execute()) {
-                    header('Location: ../../musculos/musculos_lista.php?atualizaoSucesso');
+                    header('Location: ../../musculos/musculos_lista.php?attSucesso');
                 } else {
                     print_r($stmt->errorInfo());
                 }
