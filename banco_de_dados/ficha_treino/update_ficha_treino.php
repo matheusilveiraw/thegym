@@ -1,22 +1,26 @@
 <?php
-    require_once '../../vendor/autoload.php';
-    require_once '../connect.php';
+require_once '../../vendor/autoload.php';
+require_once '../connect.php';
+require_once '../../includes/limparHtml.php';
+require_once '../../includes/sqlInjection.php';
 
     if (isset($_POST['btn-cadastrar-ficha-treino'])) {
-        $treinoFicha = new \App\Model\FichaTreino();
+        $nome = limparHtml($_POST['nome']);
+        if (detectaSqlInjection($nome)) {
+            header('Location: ../../ficha_treino/ficha_treino_lista.php?sqlError');
+        } else {
+            $fichaTreino = new \App\Model\FichaTreino();
+            $fichaTreino -> setNome($_POST['nome']);
+            $fichaTreino -> setId($_POST['id']);            
+            $fichaTreino -> setTreino1($_POST['treino1']);
+            if(isset($_POST['treino2'])) { $fichaTreino -> setTreino2($_POST['treino2']); } 
+            if(isset($_POST['treino3'])) { $fichaTreino -> setTreino3($_POST['treino3']); } 
+            if(isset($_POST['treino4'])) { $fichaTreino -> setTreino4($_POST['treino4']); } 
+            if(isset($_POST['treino5'])) { $fichaTreino -> setTreino5($_POST['treino5']); } 
 
-        $treinoFicha -> setNome($_POST['nome']);
-        $treinoFicha -> setId($_POST['id']);
-        $treinoFicha -> setTreino1($_POST['treino1']);
-        $treinoFicha -> setTreino2($_POST['treino2']);
-        $treinoFicha -> setTreino3($_POST['treino3']);
-        $treinoFicha -> setTreino4($_POST['treino4']);
-        $treinoFicha -> setTreino5($_POST['treino5']);
+            $fichaTreinoDao = new \App\Model\FichaTreinoDao();
 
-        var_dump($_POST);
-
-        $treinoFichaDao = new \App\Model\FichaTreinoDao();
-
-        $treinoFichaDao -> update($treinoFicha);
+            $fichaTreinoDao -> update($fichaTreino);
+        }
     }
 ?>
