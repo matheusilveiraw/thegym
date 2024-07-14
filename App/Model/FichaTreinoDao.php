@@ -50,7 +50,7 @@ class FichaTreinoDao
         $stmt->bindValue(7, $ft->getId());
 
         if ($stmt->execute()) {
-            header('Location: ../../ficha_treino/ficha_treino_lista.php?atualizaoSucesso');
+            header('Location: ../../ficha_treino/ficha_treino_lista.php?attSucesso');
         } else {
             print_r($stmt->errorInfo());
         }
