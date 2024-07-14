@@ -2,7 +2,6 @@
 
 include_once '../includes/header.php';
 include_once '../banco_de_dados/connect.php';
-
 ?>
 <a class="navbar-brand" href="../index.php">The Gym</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
