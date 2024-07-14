@@ -28,7 +28,7 @@
                 $stmt->execute();
 
                 if ($stmt->execute()) {
-                    header('Location: ../../exercicio/exercicio_lista.php?atualizaoSucesso');
+                    header('Location: ../../exercicio/exercicio_lista.php?attSucesso');
                 } else {
                     print_r($stmt->errorInfo());
                 }

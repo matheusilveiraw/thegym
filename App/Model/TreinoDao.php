@@ -50,19 +50,10 @@
 
 
                 if ($stmt->execute()) {
-                    header('Location: ../../treino/lista_treino.php?cadastroSucesso');
+                    header('Location: ../../treino/lista_treino.php?attSucesso');
                 } else {
                     print_r($stmt->errorInfo());
                 }
-
-                $stmt->execute();
-
-                if ($stmt->execute()) {
-                    header('Location: ../../treino/lista_treino.php?atualizaoSucesso');
-                } else {
-                    print_r($stmt->errorInfo());
-                }
-
             }
     }
 ?>

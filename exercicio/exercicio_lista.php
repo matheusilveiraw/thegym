@@ -38,6 +38,30 @@ include_once '../banco_de_dados/connect.php';
 </div>
 </nav>
 
+<?php
+if (isset($_GET['cadastroSucesso'])) {
+?>
+  <div class="alert alert-success" role="alert">
+    Músculo cadastrado com sucesso!
+  </div>
+<?php
+}
+if (isset($_GET['attSucesso'])) {
+?>
+  <div class="alert alert-success" role="alert">
+    Músculo atualizado com sucesso!
+  </div>
+<?php
+}
+if (isset($_GET['deleteSucesso'])) {
+?>
+  <div class="alert alert-success" role="alert">
+    Músculo deletado com sucesso!
+  </div>
+<?php
+}
+?>
+
 <div class="container text-center flex-grow-1 mt-5">
   <div class="row">
     <div class="col"> </div>
