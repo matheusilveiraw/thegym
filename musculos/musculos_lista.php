@@ -60,6 +60,13 @@
     </div>
   <?php
   }
+  if (isset($_GET['sqlError'])) {
+    ?>
+      <div class="alert alert-warning" role="alert">
+        Erro! Tentou passar código SQL! 
+      </div>
+    <?php
+    }
   ?>
 
   <div class="container text-center flex-grow-1 mt-5">

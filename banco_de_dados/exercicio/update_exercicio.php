@@ -10,9 +10,13 @@ if (isset($_POST['btn-cadastrar-exercicio'])) {
 
     $exercicio->setId($_POST['id']);
     $exercicio->setNome($nome);
+    
+
     $exercicio->setMusculo($_POST['musculo']);
 
     $exercicioDao = new \App\Model\ExercicioDao();
 
     $exercicioDao->update($exercicio);
 }
+
+
