@@ -27,11 +27,4 @@
     </div>
   <?php
   }
-  if (isset($_GET['sqlError'])) {
-  ?>
-    <div class="alert alert-warning" role="alert">
-      Erro! Tentou passar código SQL!
-    </div>
-  <?php
-  }
   ?>

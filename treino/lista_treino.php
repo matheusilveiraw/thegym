@@ -1,67 +1,46 @@
 <?php
-
-include_once '../includes/header.php';
-include_once '../banco_de_dados/connect.php';
-
+  include_once '../includes/header.php';
+  include_once '../banco_de_dados/connect.php';
 ?>
-<a class="navbar-brand" href="../index.php">The Gym</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    <li class="nav-item">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.php">Início</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../musculos/musculos_lista.php">Músculos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../exercicio/exercicio_lista.php"> Exercícios </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="lista_treino.php"> Treinos </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../ficha_treino/ficha_treino_lista.php"> Ficha Treino </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../cliente/cliente_lista.php"> Clientes </a>
-          </li>
-        </ul>
-      </div>
-</div>
+  <a class="navbar-brand" href="../index.php">The Gym</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.php">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../musculos/musculos_lista.php">Músculos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../exercicio/exercicio_lista.php"> Exercícios </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="lista_treino.php"> Treinos </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../ficha_treino/ficha_treino_lista.php"> Ficha Treino </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../cliente/cliente_lista.php"> Clientes </a>
+            </li>
+          </ul>
+        </div>
+  </div>
 </nav>
 
-<?php
-if (isset($_GET['cadastroSucesso'])) {
+<?php 
+  include_once '../includes/caixasDeMensagem.php';
 ?>
-  <div class="alert alert-success" role="alert">
-    Músculo cadastrado com sucesso!
-  </div>
-<?php
-}
-if (isset($_GET['attSucesso'])) {
-?>
-  <div class="alert alert-success" role="alert">
-    Músculo atualizado com sucesso!
-  </div>
-<?php
-}
-if (isset($_GET['deleteSucesso'])) {
-?>
-  <div class="alert alert-success" role="alert">
-    Músculo deletado com sucesso!
-  </div>
-<?php
-}
-?>
+
 
 <div class="container text-center flex-grow-1 mt-5">
   <div class="row">
